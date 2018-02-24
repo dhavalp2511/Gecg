@@ -38,14 +38,15 @@ public class DataAdapter extends  RecyclerView.Adapter<DataAdapter.MyViewHolder>
         holder.timing.setText(event.getTime());
         holder.date.setText(event.getDate());
         //Glide.with(mContext).load(activityList.get(position).getImages().getImg2()).into(holder.thumbnail);
+        Glide.with(mContext).load(activityList.get(position).getImage()).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).transform(new CircleTransform(mContext)).into(holder.thumbnail);
 
-        Glide
-                .with(mContext)
-                .load(activityList.get(position).getImage())// can also be a drawable
-                .error(R.mipmap.ic_launcher) // will be displayed if the image cannot be loaded
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .crossFade()
-                .into(holder.thumbnail);
+//        Glide
+//                .with(mContext)
+//                .load(activityList.get(position).getImage())// can also be a drawable
+//                .error(R.mipmap.ic_launcher) // will be displayed if the image cannot be loaded
+//                .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                .crossFade()
+//                .into(holder.thumbnail);
     }
 
     @Override

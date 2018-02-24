@@ -31,6 +31,8 @@ public class AdminLogin extends AppCompatActivity {
         login=findViewById(R.id.login_button);
         username=findViewById(R.id.admin_username);
         password=findViewById(R.id.admin_password);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         mAuth=FirebaseAuth.getInstance();
 
@@ -57,6 +59,11 @@ public class AdminLogin extends AppCompatActivity {
 
             }
         });
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
 }

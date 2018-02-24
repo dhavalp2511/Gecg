@@ -46,7 +46,7 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onItemClick(View view, int position) {
                 Intent i = new Intent(HomePage.this, ActivityDetails.class);
-                i.putExtra("activityId",activityofthedayList.get(position).getId());
+                i.putExtra("activityId",idList.get(position));
                 startActivity(i);
             }
 
@@ -59,7 +59,9 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 eventList.clear();
+                idList.clear();
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    idList.add(dataSnapshot1.getKey());
                     Event event = dataSnapshot1.getValue(Event.class);
                     eventList.add(event);
                 }

@@ -13,7 +13,7 @@ import java.util.Map;
 
         private String contactNo;
         private String cordinator;
-        private String cordinatorContactNo;
+        private String cordinator_contact_no;
         private String date;
         private String description;
         private String image;
@@ -26,10 +26,10 @@ import java.util.Map;
         public Event() {
         }
 
-        public Event(String contactNo, String cordinator, String cordinatorContactNo, String date, String description, String image, String location, String name, String organizer, String time) {
+        public Event(String contactNo, String cordinator, String cordinator_contact_no, String date, String description, String image, String location, String name, String organizer, String time) {
             this.contactNo = contactNo;
             this.cordinator = cordinator;
-            this.cordinatorContactNo = cordinatorContactNo;
+            this.cordinator_contact_no = cordinator_contact_no;
             this.date = date;
             this.description = description;
             this.image = image;
@@ -56,11 +56,11 @@ import java.util.Map;
         }
 
         public String getCordinatorContactNo() {
-            return cordinatorContactNo;
+            return cordinator_contact_no;
         }
 
-        public void setCordinatorContactNo(String cordinatorContactNo) {
-            this.cordinatorContactNo = cordinatorContactNo;
+        public void setCordinatorContactNo(String cordinator_contact_no) {
+            this.cordinator_contact_no = cordinator_contact_no;
         }
 
         public String getDate() {
