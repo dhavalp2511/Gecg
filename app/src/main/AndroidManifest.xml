@@ -22,7 +22,10 @@
         <activity
             android:name=".HomePage"
             android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".UploadEvent" />
+        <activity android:name=".AdminLogin" />
+        <activity android:name=".ActivityDetails"></activity>
     </application>
 
 </manifest>

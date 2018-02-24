@@ -7,9 +7,9 @@ import java.util.Map;
  * Created by Hardik on 2/23/2018.
  */
 
-public class Event {
 
-    public class Example {
+
+    public class Event {
 
         private String contactNo;
         private String cordinator;
@@ -23,10 +23,10 @@ public class Event {
         private String time;
         private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-        public Example() {
+        public Event() {
         }
 
-        public Example(String contactNo, String cordinator, String cordinatorContactNo, String date, String description, String image, String location, String name, String organizer, String time) {
+        public Event(String contactNo, String cordinator, String cordinatorContactNo, String date, String description, String image, String location, String name, String organizer, String time) {
             this.contactNo = contactNo;
             this.cordinator = cordinator;
             this.cordinatorContactNo = cordinatorContactNo;
@@ -131,4 +131,4 @@ public class Event {
 
 
 
-}
+
