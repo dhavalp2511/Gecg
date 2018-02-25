@@ -52,8 +52,8 @@ public class ActivityDetails extends AppCompatActivity {
                     activityTiming.setText(dataSnapshot.child("time").getValue().toString());
                     activityDate.setText(dataSnapshot.child("date").getValue().toString());
                     cordinatorFaculty.setText(dataSnapshot.child("cordinator").getValue().toString());
-                    cordinatorFacultyContact.setText(dataSnapshot.child("cordinator_contact_no").getValue().toString());
-                    organizerContact.setText(dataSnapshot.child("contact_no").getValue().toString());
+                    cordinatorFacultyContact.setText(dataSnapshot.child("cordinatorContactNo").getValue().toString());
+                    organizerContact.setText(dataSnapshot.child("contactNo").getValue().toString());
                     organizerName.setText(dataSnapshot.child("organizer").getValue().toString());
                     Glide
                             .with(getApplicationContext())
