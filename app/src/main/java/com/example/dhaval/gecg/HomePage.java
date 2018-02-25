@@ -91,14 +91,24 @@ public class HomePage extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch (item.getItemId()) {
-            case R.id.action_search:
-                // search action
-                startActivity(new Intent(HomePage.this,AdminLogin.class));
-                return true;
-            default:
+        int id=item.getItemId();
+
+        if(id==R.id.action_search){
+            startActivity(new Intent(HomePage.this,AdminLogin.class));
+            return  true;
+        }else{
             return super.onOptionsItemSelected(item);
         }
+
+//        switch (item.getItemId()) {
+//            case R.id.action_search:
+//                // search action
+//                return true;
+//
+//                default:
+//
+//
+//        }
     }
 }
 

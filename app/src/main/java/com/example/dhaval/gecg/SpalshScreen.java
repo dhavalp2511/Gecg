@@ -26,7 +26,9 @@ public class SpalshScreen extends AppCompatActivity {
 
         String pushKey=mToken.push().getKey();
 
-        mToken.child(token_id).setValue("true");
+        if (token_id != null) {
+            mToken.child(token_id).setValue("true");
+        }
 
         // Task to do when the timer ends
         TimerTask ShowSplash = new TimerTask() {

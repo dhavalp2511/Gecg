@@ -1,13 +1,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.dhaval.gecg.SpalshScreen"
-    >
+    tools:context="com.example.dhaval.gecg.SpalshScreen">
+
     <item
         android:id="@+id/action_search"
         android:icon="@drawable/ic_file_upload_black_24dp"
         android:showAsAction="ifRoom"
-        android:title="Upload"
+        android:title="@string/upload"
         android:visible="true"
         app:showAsAction="always"
         tools:ignore="AppCompatResource" />
