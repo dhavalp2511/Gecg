@@ -17,13 +17,11 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
 
-
-        String notificationTitle=remoteMessage.getData().get("title").toString();
+        String notificationTitle=remoteMessage.getData().get("title");
         String body=remoteMessage.getData().get("body");
         RemoteMessage.Notification notification = remoteMessage.getNotification();
         int mNotificationId = (int)System.currentTimeMillis();
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-
 
         Intent resultIntent = new Intent(this,HomePage.class);
         resultIntent.setAction(Intent.ACTION_MAIN);
@@ -36,7 +34,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                         resultIntent,
                         PendingIntent.FLAG_UPDATE_CURRENT
                 );
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this,"channelID")
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_round))
                 .setSmallIcon(R.mipmap.ic_launcher_round)
                 .setContentTitle(notificationTitle)

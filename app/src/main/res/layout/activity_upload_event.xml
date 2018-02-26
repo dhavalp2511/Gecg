@@ -27,8 +27,7 @@
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:editable="true"
-                android:hint="image"
+                android:hint="@string/image"
                 android:singleLine="true" />
         </android.support.design.widget.TextInputLayout>
 
@@ -41,7 +40,7 @@
             android:src="@android:drawable/ic_menu_upload"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/event_image"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" android:contentDescription="@string/todo" />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/event_name"
@@ -55,8 +54,8 @@
 
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Event Name"
+                android:layout_height="57dp"
+                android:hint="@string/event_name"
                 android:singleLine="true" />
         </android.support.design.widget.TextInputLayout>
 
@@ -74,7 +73,7 @@
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Organizer"
+                android:hint="@string/organizer"
                 android:singleLine="true" />
         </android.support.design.widget.TextInputLayout>
 
@@ -83,7 +82,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:layout_marginLeft="5dp"
             android:layout_marginStart="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.166"
@@ -95,7 +93,7 @@
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Organizer Contact"
+                android:hint="@string/organizer_contact"
                 android:inputType="number"
                 android:singleLine="true" />
         </android.support.design.widget.TextInputLayout>
@@ -116,8 +114,8 @@
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:hint="Date"
+                android:layout_marginStart="5dp"
+                android:hint="@string/date"
                 android:singleLine="true" />
         </android.support.design.widget.TextInputLayout>
 
@@ -135,7 +133,7 @@
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Time"
+                android:hint="@string/time"
                 android:singleLine="true" />
         </android.support.design.widget.TextInputLayout>
 
@@ -153,7 +151,7 @@
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Location"
+                android:hint="@string/location"
                 android:singleLine="true" />
         </android.support.design.widget.TextInputLayout>
 
@@ -171,7 +169,7 @@
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Description" />
+                android:hint="@string/description" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -190,7 +188,7 @@
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Faculty Cordinator"
+                android:hint="@string/faculty_cordinator"
                 android:singleLine="true" />
         </android.support.design.widget.TextInputLayout>
 
@@ -210,7 +208,7 @@
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Faculty Cordinator Conatct"
+                android:hint="@string/faculty_cordinator_conatct"
                 android:inputType="number"
                 android:singleLine="true" />
         </android.support.design.widget.TextInputLayout>
@@ -223,10 +221,24 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
-            android:text="Submit"
+            android:text="@string/submit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/event_faculty_no" />
+
+        <ProgressBar
+            android:id="@+id/progressbar_upload"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:visibility="invisible"
+            android:layout_marginTop="172dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.471"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 

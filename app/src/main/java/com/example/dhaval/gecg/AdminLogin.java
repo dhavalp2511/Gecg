@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,6 +23,7 @@ public class AdminLogin extends AppCompatActivity {
     private Button login;
     private TextInputLayout username,password;
     private FirebaseAuth mAuth;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +36,13 @@ public class AdminLogin extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        progressBar=findViewById(R.id.progressbar_login);
         mAuth=FirebaseAuth.getInstance();
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressBar.setVisibility(View.VISIBLE);
                 String name=username.getEditText().getText().toString();
                 String pass=password.getEditText().getText().toString();
                 if(name.length()>0){
@@ -49,17 +53,21 @@ public class AdminLogin extends AppCompatActivity {
                                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                                         if(task.isSuccessful()){
+                                            progressBar.setVisibility(View.GONE);
                                             startActivity(new Intent(AdminLogin.this,UploadEvent.class));
 
                                         }else {
+                                            progressBar.setVisibility(View.GONE);
                                             Toast.makeText(AdminLogin.this,"Invalid Credential",Toast.LENGTH_SHORT).show();
                                         }
                                     }
                                 });
                     }else{
+                        progressBar.setVisibility(View.GONE);
                         Toast.makeText(AdminLogin.this,"Enter pls password",Toast.LENGTH_SHORT).show();
                     }
                 }else{
+                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(AdminLogin.this,"Enter pls Email",Toast.LENGTH_SHORT).show();
                 }
 

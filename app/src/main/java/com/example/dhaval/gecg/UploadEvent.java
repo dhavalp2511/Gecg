@@ -6,10 +6,12 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -33,6 +35,7 @@ public class UploadEvent extends AppCompatActivity{
     String getUrl;
     private DatabaseReference mDatabase;
     private final int PICK_IMAGE_REQUEST=10;
+    ProgressBar progressBar;
 
 
     @Override
@@ -66,11 +69,14 @@ public class UploadEvent extends AppCompatActivity{
         });
         Button submit=findViewById(R.id.event_button);
         image.setEnabled(false);
+        progressBar=findViewById(R.id.progressbar_upload);
+
         submit.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
 
+                progressBar.setVisibility(View.VISIBLE);
                 String g1=organizer_contact.getEditText().getText().toString();
                 String g2=cordinator.getEditText().getText().toString();
                 String g3=faculty_contact.getEditText().getText().toString();
@@ -97,62 +103,75 @@ public class UploadEvent extends AppCompatActivity{
                                                                 mDatabase.child(pushKey).setValue(event).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                                     @Override
                                                                     public void onComplete(@NonNull Task<Void> task) {
+
                                                                         if(task.isSuccessful()){
 
+                                                                            progressBar.setVisibility(View.GONE);
                                                                             Toast.makeText(UploadEvent.this,"Succefully Uploaded",Toast.LENGTH_SHORT).show();
-
+                                                                            startActivity(new Intent(UploadEvent.this,HomePage.class));
+                                                                            finish();
                                                                         }else{
-
+                                                                            progressBar.setVisibility(View.GONE);
                                                                             Toast.makeText(UploadEvent.this,"Error",Toast.LENGTH_SHORT).show();
 
                                                                         }
                                                                     }
                                                                 });
                                                             }else{
+                                                                progressBar.setVisibility(View.GONE);
                                                                 Toast.makeText(UploadEvent.this, "select the image first", Toast.LENGTH_SHORT).show();
                                                             }
                                                         }else{
+                                                            progressBar.setVisibility(View.GONE);
                                                             Toast.makeText(UploadEvent.this, "Enter Pls Time", Toast.LENGTH_SHORT).show();
                                                         }
                                                     }else{
+                                                        progressBar.setVisibility(View.GONE);
                                                         Toast.makeText(UploadEvent.this, "Enter pls Organizer Name", Toast.LENGTH_SHORT).show();
                                                     }
                                                 }else{
+                                                    progressBar.setVisibility(View.GONE);
                                                     Toast.makeText(UploadEvent.this, "Enter pls name of event", Toast.LENGTH_SHORT).show();
                                                 }
                                             }else{
+                                                progressBar.setVisibility(View.GONE);
                                                 Toast.makeText(UploadEvent.this, "Enter pls location", Toast.LENGTH_SHORT).show();
                                             }
                                         }else{
+                                            progressBar.setVisibility(View.GONE);
                                             Toast.makeText(UploadEvent.this, "Enter pls Description", Toast.LENGTH_SHORT).show();
                                         }
                                     }else{
+                                        progressBar.setVisibility(View.GONE);
                                         Toast.makeText(UploadEvent.this, "Enter pls date", Toast.LENGTH_SHORT).show();
                                     }
                                 }else{
+                                    progressBar.setVisibility(View.GONE);
                                     Toast.makeText(UploadEvent.this, "faculty Contact Should be in 10 digits", Toast.LENGTH_SHORT).show();
                                 }
                             }else{
+                                progressBar.setVisibility(View.GONE);
                                 Toast.makeText(UploadEvent.this, "Enter Pls Faculty Cordinator Contact", Toast.LENGTH_SHORT).show();
                             }
                         }else{
+                            progressBar.setVisibility(View.GONE);
                             Toast.makeText(UploadEvent.this, "Enter pls faculty Cordinator", Toast.LENGTH_SHORT).show();
                         }
                     }
                     else{
+                        progressBar.setVisibility(View.GONE);
                         Toast.makeText(UploadEvent.this, "Org. Contact Should be in 10 digits", Toast.LENGTH_SHORT).show();
                     }
                 }else{
+                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(UploadEvent.this, "Org. Contact is empty", Toast.LENGTH_SHORT).show();
 
                 }
 
+            }//End of onClick() method
+        });//End of setOnClick method
 
-
-            }
-        });
-
-    }
+    }//End of onCreate() method
 
     public void chooseImage(){
         Intent intent = new Intent();
@@ -180,12 +199,8 @@ public class UploadEvent extends AppCompatActivity{
 
                         getUrl = task.getResult().getDownloadUrl().toString();
 
-
-
                     }
                 });
-
-
 
         }
     }

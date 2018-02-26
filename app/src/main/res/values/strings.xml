@@ -17,10 +17,13 @@
     <string name="login">Login</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
-    <string name="name">Name</string>
-    <string name="timing">Timing :</string>
-    <string name="organized_by">Organized By :</string>
-    <string name="placed_at">Placed at :</string>
     <string name="dateList">Date :</string>
     <string name="upload">Upload</string>
+    <string name="timing">Timing :</string>
+    <string name="placed_at">Placed at :</string>
+    <string name="name">Name</string>
+    <string name="organized_by">Organized By :</string>
+    <string name="date2">Date :</string>
+    <string name="goverment_engineering_colllege">Goverment Engineering Colllege</string>
+    <string name="gandhinagar">Gandhinagar</string>
 </resources>
