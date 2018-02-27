@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -60,12 +59,12 @@ public class DataAdapter extends  RecyclerView.Adapter<DataAdapter.MyViewHolder>
 
         public MyViewHolder(View view) {
             super(view);
-            actName = (TextView) view.findViewById(R.id.actName);
-            location = (TextView) view.findViewById(R.id.actDest);
-            oraganizer = (TextView) view.findViewById(R.id.actOrg);
+            actName =  view.findViewById(R.id.actName);
+            location = view.findViewById(R.id.actDest);
+            oraganizer =  view.findViewById(R.id.actOrg);
             timing = view.findViewById(R.id.actTiming);
             date = view.findViewById(R.id.actDate);
-            thumbnail = (ImageView) view.findViewById(R.id.actImg);
+            thumbnail = view.findViewById(R.id.actImg);
         }
     }
     public DataAdapter(Context mContext, List<Event> activityList) {

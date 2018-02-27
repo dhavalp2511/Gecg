@@ -8,6 +8,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.iid.FirebaseInstanceId;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -22,12 +25,11 @@ public class SpalshScreen extends AppCompatActivity {
 
         mToken= FirebaseDatabase.getInstance().getReference("tokens");
 
+        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss", Locale.ENGLISH).format(new Date());
         String token_id= FirebaseInstanceId.getInstance().getToken();
 
-        String pushKey=mToken.push().getKey();
-
         if (token_id != null) {
-            mToken.child(token_id).setValue("true");
+            mToken.child(token_id).setValue(timeStamp);
         }
 
         // Task to do when the timer ends

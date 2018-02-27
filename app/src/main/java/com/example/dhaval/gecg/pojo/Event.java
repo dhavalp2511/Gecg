@@ -21,6 +21,7 @@ import java.util.Map;
         private String name;
         private String organizer;
         private String time;
+
         private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
         public Event() {

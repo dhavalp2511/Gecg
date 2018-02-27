@@ -26,4 +26,10 @@
     <string name="date2">Date :</string>
     <string name="goverment_engineering_colllege">Goverment Engineering Colllege</string>
     <string name="gandhinagar">Gandhinagar</string>
+    <string name="cordinator_faculty">Cordinator Faculty</string>
+    <string name="textview">TextView</string>
+    <string name="phone">Phone :</string>
+    <string name="actname">actNAme</string>
+    <string name="actdestname">actDestNAme</string>
+
 </resources>

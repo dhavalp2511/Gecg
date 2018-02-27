@@ -9,7 +9,7 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <android.support.v7.widget.CardView
             android:id="@+id/cardView"
@@ -26,14 +26,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
-                android:src="@drawable/ic_launcher_background" />
+                android:src="@drawable/ic_launcher_background"
+                android:contentDescription="@string/todo" />
         </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -44,18 +45,20 @@
         <ImageView
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:layout_marginLeft="3dp"
+            android:layout_marginStart="3dp"
             android:layout_marginTop="5dp"
             app:srcCompat="@drawable/ic_blacklogo"
-            tools:ignore="VectorDrawableCompat" />
+            tools:ignore="VectorDrawableCompat"
+            android:contentDescription="@string/todo" />
 
         <ImageView
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="50dp"
             app:srcCompat="@drawable/ic_destination_flag"
-            tools:ignore="VectorDrawableCompat" />
+            tools:ignore="VectorDrawableCompat"
+            android:contentDescription="@string/todo" />
 
 
         <TextView
@@ -64,27 +67,29 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|left"
             android:layout_marginBottom="10dp"
-            android:layout_marginLeft="50dp"
-            android:text="actDestNAme"
-            android:textSize="20sp" />
+            android:layout_marginStart="50dp"
+            android:text="@string/actdestname"
+            android:textSize="20sp"
+            tools:ignore="RtlHardcoded" />
 
         <TextView
             android:id="@+id/actName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|left"
-            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:gravity="top|left"
-            android:text="actNAme"
-            android:textSize="20sp" />
+            android:text="@string/actname"
+            android:textSize="20sp"
+            tools:ignore="RtlHardcoded" />
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView2"
@@ -104,16 +109,17 @@
                 <ImageView
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:layout_marginLeft="5dp"
-                    android:src="@drawable/ic_perm_contact_calendar_black_24dp" />
+                    android:layout_marginStart="5dp"
+                    android:src="@drawable/ic_perm_contact_calendar_black_24dp"
+                    android:contentDescription="@string/todo" />
 
                 <TextView
                     android:id="@+id/actDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
                     android:layout_marginTop="2dp"
-                    android:text="TextView"
+                    android:text="@string/textview"
                     android:textSize="18sp"
                     app:layout_constraintDimensionRatio="w,"
                     app:layout_constraintTop_toBottomOf="@+id/overview" />
@@ -127,15 +133,16 @@
                 <ImageView
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:layout_marginLeft="5dp"
-                    android:src="@drawable/ic_access_time_black_24dp" />
+                    android:layout_marginStart="5dp"
+                    android:src="@drawable/ic_access_time_black_24dp"
+                    android:contentDescription="@string/todo" />
 
                 <TextView
                     android:id="@+id/actTiming"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:text="TextView"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/textview"
                     android:textSize="18sp"
                     app:layout_constraintTop_toBottomOf="@+id/actDate" />
             </LinearLayout>
@@ -144,7 +151,7 @@
                 android:id="@+id/readmore"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:lineSpacingExtra="8sp"
                 android:text="Description dfbbahsfgb sfb ha ghsaf ahgfhasgfssa fjhasffgha gfaf"
@@ -165,7 +172,7 @@
         android:id="@+id/cardView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3"
@@ -177,10 +184,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="8dp"
             android:gravity="left"
-            android:text="Organizer"
+            android:text="@string/organizer"
             android:textColor="@color/colorPrimary"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -195,7 +202,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="35dp"
             android:orientation="vertical"
-            tools:layout_editor_absoluteY="730dp">
+            tools:layout_editor_absoluteY="730dp"
+            tools:ignore="RtlHardcoded">
 
             <TextView
                 android:id="@+id/actOrgName"
@@ -203,7 +211,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
-                android:text="TextView"
+                android:text="@string/textview"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -216,14 +224,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
-                    android:text="Phone :" />
+                    android:text="@string/phone" />
 
                 <TextView
                     android:id="@+id/actOrgContact"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="TextView" />
+                    android:text="@string/textview" />
             </LinearLayout>
 
         </LinearLayout>
@@ -244,10 +252,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="8dp"
             android:gravity="left"
-            android:text="Cordinator Faculty"
+            android:text="@string/cordinator_faculty"
             android:textColor="@color/colorPrimary"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -262,15 +270,16 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="35dp"
             android:orientation="vertical"
-            tools:layout_editor_absoluteY="730dp">
+            tools:layout_editor_absoluteY="730dp"
+            tools:ignore="RtlHardcoded">
 
             <TextView
                 android:id="@+id/actCordFac"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
-                android:text="TextView"
+                android:text="@string/textview"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -281,16 +290,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
                     android:layout_marginTop="5dp"
-                    android:text="Phone :" />
+                    android:text="@string/phone" />
 
                 <TextView
                     android:id="@+id/actCordFacContact"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="TextView" />
+                    android:text="@string/textview" />
             </LinearLayout>
 
         </LinearLayout>

@@ -19,7 +19,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         String notificationTitle=remoteMessage.getData().get("title");
         String body=remoteMessage.getData().get("body");
-        RemoteMessage.Notification notification = remoteMessage.getNotification();
+
+        //RemoteMessage.Notification notification = remoteMessage.getNotification();
+
         int mNotificationId = (int)System.currentTimeMillis();
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
@@ -34,7 +36,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                         resultIntent,
                         PendingIntent.FLAG_UPDATE_CURRENT
                 );
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this,"channelID")
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this,"com.example.dhaval.gecg")
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_round))
                 .setSmallIcon(R.mipmap.ic_launcher_round)
                 .setContentTitle(notificationTitle)

@@ -6,15 +6,11 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TimePicker;
 import android.widget.Toast;
-
 import com.example.dhaval.gecg.pojo.Event;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -77,6 +73,7 @@ public class UploadEvent extends AppCompatActivity{
             public void onClick(View view) {
 
                 progressBar.setVisibility(View.VISIBLE);
+
                 String g1=organizer_contact.getEditText().getText().toString();
                 String g2=cordinator.getEditText().getText().toString();
                 String g3=faculty_contact.getEditText().getText().toString();
@@ -204,6 +201,5 @@ public class UploadEvent extends AppCompatActivity{
 
         }
     }
-
 
 }

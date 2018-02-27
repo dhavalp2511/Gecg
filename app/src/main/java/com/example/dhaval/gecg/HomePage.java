@@ -18,24 +18,38 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.iid.FirebaseInstanceId;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class HomePage extends AppCompatActivity {
     RecyclerView recyclerView;
-    DatabaseReference mFirebaseDatabase;
+    DatabaseReference mFirebaseDatabase,mToken;
 
     List<Event> eventList;
     List<String> idList;
     DataAdapter dataAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle("Gecg");
+
+        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss", Locale.ENGLISH).format(new Date());
+
+        mToken= FirebaseDatabase.getInstance().getReference("tokens");
+
+        String token_id= FirebaseInstanceId.getInstance().getToken();
+
+        if (token_id != null) {
+            mToken.child(token_id).setValue(timeStamp);
+        }
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
